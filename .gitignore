@@ -1,0 +1,17 @@
+# VS Code settings
+.vscode/
+
+# Environment variables (SECRETS)
+.env
+flask_app/.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Machine learning model files
+*.pkl
+
+# System files
+Thumbs.db
+.DS_Store

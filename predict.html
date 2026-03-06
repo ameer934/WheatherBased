@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wind Energy Prediction</title>
+    <style>
+        body { background:#F2D19A; font-family:Georgia, serif; }
+        .container { display:flex; justify-content:space-around; margin-top:40px; }
+        .box { width:40%; }
+        h2 { text-align:center; }
+        button { background:#6c493a; color:white; padding:10px 15px; border:none; cursor:pointer; }
+        input { padding:8px; width:80%; margin-bottom:10px; }
+        select { padding:8px; width:85%; margin-bottom:10px; }
+    </style>
+</head>
+<body>
+
+<h2>Wind Turbine Energy Prediction Based on Weather Conditions</h2>
+
+<div class="container">
+
+    <!-- Weather Section -->
+    <div class="box">
+        <h3>Enter your city name to know the weather conditions</h3>
+        
+        <form action="/windapi" method="post">
+            <input list="cityOptions" name="city" placeholder=" e.g. Ongole,IN" required>
+
+            <datalist id="cityOptions">
+                <!-- Andhra Pradesh -->
+                <option value="Ongole,IN">
+                <option value="Vijayawada,IN">
+                <option value="Visakhapatnam,IN">
+                <option value="Guntur,IN">
+                <option value="Tirupati,IN">
+                <option value="Nellore,IN">
+                <option value="Kurnool,IN">
+                <option value="Rajahmundry,IN">
+                <option value="Kadapa,IN">
+                <option value="Anantapur,IN">
+
+                <!-- Major Indian Cities -->
+                <option value="Delhi,IN">
+                <option value="Mumbai,IN">
+                <option value="Chennai,IN">
+                <option value="Bangalore,IN">
+                <option value="Hyderabad,IN">
+                <option value="Kolkata,IN">
+                <option value="Pune,IN">
+                <option value="Ahmedabad,IN">
+                <option value="Jaipur,IN">
+                <option value="Lucknow,IN">
+            </datalist>
+
+            <br>
+            <button type="submit">CHECK THE WEATHER CONDITIONS</button>
+        </form>
+
+        <h3>The weather conditions of the city are</h3>
+        <p>Temperature: {{temp}}</p>
+        <p>Humidity: {{humid}}</p>
+        <p>Pressure: {{pressure}}</p>
+        <p>Wind Speed: {{speed}}</p>
+
+        {% if error %}
+        <h4 style="color:red;">Weather Error: {{ error }}</h4>
+        {% endif %}
+    </div>
+
+    <!-- Prediction Section -->
+    <div class="box">
+        <h3>Predict the Wind Energy</h3>
+        <form action="/y_predict" method="post">
+    <!-- Keep weather values -->
+    <input type="hidden" name="temp" value="{{temp}}">
+    <input type="hidden" name="humid" value="{{humid}}">
+    <input type="hidden" name="pressure" value="{{pressure}}">
+    <input type="hidden" name="speed" value="{{speed}}">
+
+    <input type="text" name="theo" placeholder="Theoretical Power in KWh" required><br>
+    <input type="text" name="wind" placeholder="Wind Speed in m/s" required><br>
+    <button type="submit">PREDICT</button>
+</form>
+
+
+        <h3>{{prediction_text}}</h3>
+    </div>
+
+</div>
+
+</body>
+</html>
