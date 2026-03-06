@@ -35,7 +35,7 @@ At the root level of the project, the .gitignore file ensures unnecessary or sen
 
 ### 1️⃣ Clone the Repository
 
-    git clone https://github.com/YOUR-USERNAME/WeatherBased
+    git clone https://github.com/YOUR-USERNAME/WheatherBased
    
 
 2️⃣ Install Dependencies
@@ -83,5 +83,6 @@ Phaneendra Gangadi
 Project developed for learning Machine Learning + Web Integration.
 
 ⭐ If you like this project, give it a star!
+
 
 
