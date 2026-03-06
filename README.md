@@ -71,19 +71,16 @@ You can retrain the model using the provided dataset.
 
 ## 🎥 Project Demo Video
 
-https://drive.google.com/file/d/1yNk_HwU6fxBCubl6OlmCyTdihG4euH0l/view?usp=sharing
+https://drive.google.com/drive/home 
 
 
 ## 👩‍💻 Author's
 
-M.Thirapatha Swami
-
-K.Sahitya
-
-G.Rushda
-
-N.Udhay Babu
+Shaik Areef
+Shai Ameer Basha
+Phaneendra Gangadi
 
 Project developed for learning Machine Learning + Web Integration.
 
 ⭐ If you like this project, give it a star!
+
